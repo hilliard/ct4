@@ -8,6 +8,7 @@ Ct4::Application.routes.draw do
   get "users/new"
 
   resources :users
+  resources :sessions, only: [:new, :create, :destroy ]
   root 'static_pages#home'
 
 
@@ -18,7 +19,12 @@ Ct4::Application.routes.draw do
 
 
   match '/signup',  to: 'users#new', via: 'get'
-  # You can have the root of your site routed with "root"
+  match '/signin', to: 'sessions#new', via: 'get'
+  match '/signout', to: 'sessions#destroy', via: 'delete'
+
+
+
+   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
   # Example of regular route:
