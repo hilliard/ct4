@@ -6,6 +6,19 @@ gem 'rails', '4.0.0'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
+group :development, :test do
+  # gem 'sqlite3', '1.3.7'
+  gem 'rspec-rails', '2.13.1'
+end
+
+group :test do
+  gem 'selenium-webdriver', '2.0.0'
+  gem 'capybara', '2.1.0'
+end
+
+# for windows
+# gem 'ansicon'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 gem 'bootstrap-sass', '2.3.2.0'
@@ -33,9 +46,16 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :test do
+  gem 'cucumber-rails', '1.3.0', :require => false
+  gem 'database_cleaner', github: 'bmabey/database_cleaner'
+end
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 # gem 'bcrypt-ruby','~> 3.1.1', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
+
+gem 'faker', '1.1.2'
 
 # Use unicorn as the app server
 # gem 'unicorn'
